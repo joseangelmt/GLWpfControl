@@ -255,7 +255,12 @@ namespace OpenTK.Wpf
                     _renderer.ReallocateFramebufferIfNeeded(RenderSize.Width, RenderSize.Height, dpiScaleX, dpiScaleY, format, msaaType);
                 }
 
-                _renderer.Render(drawingContext);
+                try
+                {
+                    _renderer.Render(drawingContext);
+                }
+                catch
+                {}
             }
             else
             {
